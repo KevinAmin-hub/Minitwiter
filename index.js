@@ -66,8 +66,15 @@ app.post('/posts', async (req, res) => {
   }
 });
 
-ensureTables().then(() => {
-  app.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port} (useDb=${useDb})`);
+// Start server only when executed directly. When imported (for tests), do not listen.
+ensureTables();
+
+if (require.main === module) {
+  ensureTables().then(() => {
+    app.listen(port, () => {
+      console.log(`Server listening on http://localhost:${port} (useDb=${useDb})`);
+    });
   });
-});
+}
+
+module.exports = app;
