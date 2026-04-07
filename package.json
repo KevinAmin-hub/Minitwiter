@@ -1,0 +1,19 @@
+{
+  "name": "mini-twitter-api",
+  "version": "0.1.0",
+  "description": "API Rede Social - Mini Twitter (scaffold)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"No tests\" && exit 0"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
